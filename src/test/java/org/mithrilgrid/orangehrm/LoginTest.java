@@ -2,6 +2,7 @@ package org.mithrilgrid.orangehrm;
 
 import org.mithrilgrid.base.BaseTest;
 import org.mithrilgrid.orangehrm.flows.LoginFlow;
+import org.mithrilgrid.util.LoggerUtil;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -18,6 +19,7 @@ public class LoginTest extends BaseTest {
 
         // Act
         loginFlow.login(username, password);
+        LoggerUtil.info("Logged In Successfully");
 
         // Assert
         String actualHeader = loginFlow.getDashboardHeader();

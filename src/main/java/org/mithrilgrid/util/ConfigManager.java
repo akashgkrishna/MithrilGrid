@@ -12,7 +12,8 @@ public class ConfigManager {
                 "src/main/resources/config.properties")) {
             properties.load(input);
         } catch (IOException e) {
-            throw new RuntimeException("Failed to load configuration properties.");
+            LoggerUtil.error("Failed to load configuration properties.", e);
+            throw new RuntimeException("Failed to load configuration properties.", e);
         }
     }
 
