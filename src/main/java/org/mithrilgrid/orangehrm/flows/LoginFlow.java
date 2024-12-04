@@ -14,13 +14,26 @@ public class LoginFlow {
         this.dashboardPage = new DashboardPage(driver);
     }
 
-    public void login(String username, String password) {
+    public void login(String username, String password)
+    {
         loginPage.enterUsername(username);
         loginPage.enterPassword(password);
         loginPage.clickLogin();
     }
 
+    public void loginWithEmptyFields(){
+        loginPage.clickLogin();;
+    }
+
     public String getDashboardHeader() {
         return dashboardPage.getHeader();
+    }
+
+    public String getErrorMessage(){
+        return loginPage.getErrorMessage();
+    }
+
+    public String getErrorMessageForLoginWithEmptyFields(){
+        return loginPage.getErrorMessageForLoginWithEmptyFields();
     }
 }

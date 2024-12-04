@@ -8,6 +8,7 @@ public class DashboardPage extends BasePage {
 
     // Locators
     private By header = By.tagName("h6");
+    private By pimButton = By.xpath("//span[contains(@class, 'oxd-main-menu-item--name') and text()='PIM']");
 
     //Constructor
     public DashboardPage(WebDriver driver) {
@@ -17,4 +18,5 @@ public class DashboardPage extends BasePage {
     public String getHeader(){
         return getText(header);
     }
+
 }

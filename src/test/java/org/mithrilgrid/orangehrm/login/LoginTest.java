@@ -1,4 +1,4 @@
-package org.mithrilgrid.orangehrm;
+package org.mithrilgrid.orangehrm.login;
 
 import org.mithrilgrid.base.BaseTest;
 import org.mithrilgrid.orangehrm.flows.LoginFlow;
