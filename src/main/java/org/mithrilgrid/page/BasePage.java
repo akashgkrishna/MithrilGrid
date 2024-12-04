@@ -63,4 +63,15 @@ public class BasePage {
             throw e; // Re-throw to ensure the test fails
         }
     }
+
+    protected boolean isDisplayed(By locator){
+        waitForElementVisibility(locator);
+        try {
+            WebElement element = driver.findElement(locator);
+            return element.isDisplayed();
+        }catch (Exception e){
+            LoggerUtil.error("Element not Displayed: " + locator);
+            throw e;
+        }
+    }
 }
