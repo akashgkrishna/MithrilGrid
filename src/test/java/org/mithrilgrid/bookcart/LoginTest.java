@@ -1,7 +1,7 @@
-package org.mithrilgrid.orangehrm.login;
+package org.mithrilgrid.bookcart;
 
 import org.mithrilgrid.base.BaseTest;
-import org.mithrilgrid.orangehrm.flows.LoginFlow;
+import org.mithrilgrid.bookcart.flows.LoginFlow;
 import org.mithrilgrid.util.LoggerUtil;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -13,16 +13,15 @@ public class LoginTest extends BaseTest {
         // Arrange
         LoginFlow loginFlow = new LoginFlow(driver);
 
-        String username = "Admin";
-        String password = "admin123";
-        String expected = "Dashboard";
+        String username = "johnnybravo";
+        String password = "Johnny@bravo1";
 
         // Act
-        loginFlow.login(username, password);
+        loginFlow.loginToBookcart(username, password);
         LoggerUtil.info("Logged In Successfully");
 
         // Assert
-        String actualHeader = loginFlow.getDashboardHeader();
-        Assert.assertEquals(actualHeader, expected);
+        String actualHeader = loginFlow.getUserName();
+        Assert.assertEquals(actualHeader, username);
     }
 }
