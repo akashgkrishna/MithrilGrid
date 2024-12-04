@@ -15,6 +15,7 @@ public class Header extends BasePage {
     private final By loginButton = By.xpath("//span[normalize-space()='Login']");
 //    private final By username = By.xpath("//*[normalize-space(text())='johnnybravo']");
     private final By username = By.xpath("//span[@class='mdc-button__label']//span");
+    By cartButton = By.xpath("(//button[contains(@class, 'mdc-icon-button')])[2]");
 
     public void clickOnLoginButton(){
         click(loginButton);
@@ -22,6 +23,10 @@ public class Header extends BasePage {
 
     public String getUsername(){
         return getText(username).trim();
+    }
+
+    public void clickOnCartButton(){
+        click(cartButton);
     }
 
 }
